@@ -1,0 +1,123 @@
+/* Importante para o Tailwind e Angular conviverem */
+@import "tailwindcss";
+
+:root {
+    /* Nova paleta inspirada na floresta */
+    --forest-green: #233026; /* Verde musgo escuro */
+    --wood-brown: #825b41;   /* Castanho madeira quente */
+    --cream-bg: #f4f1eb;     /* Fundo creme suave */
+    --forest-dark: #1a1a1a;  /* Texto escuro */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream-bg);
+    color: var(--forest-dark);
+    margin: 0;
+}
+
+.hero-gradient {
+    /* Gradiente de verde musgo para a secção principal */
+    background: linear-gradient(135deg, #233026 0%, #151d17 100%);
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Botão Castanho Madeira */
+.btn-wood {
+    background-color: var(--wood-brown);
+    color: var(--cream-bg);
+    transition: all 0.3s ease;
+}
+
+.btn-wood:hover {
+    background-color: #6a4933;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(130, 91, 65, 0.3);
+}
+
+.btn-admin-primary {
+    @apply bg-[var(--wood-brown)] text-[var(--cream-bg)] font-semibold py-2 px-4 rounded-md shadow-sm hover:bg-[#6a4933] hover:shadow-md transition-all active:scale-95;
+}
+
+/* Fundo padrão suave (alterado para o tom castanho com baixa opacidade) */
+.forest-pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23825b41' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* INPUTS E VALIDAÇÕES */
+.input-forest.ng-invalid.ng-touched,
+.input-forest.ng-invalid.ng-dirty {
+    border-color: #ef4444; /* Vermelho Red-500 */
+    background-color: #fef2f2; /* Fundo avermelhado muito suave */
+    color: #991b1b; /* Texto vermelho escuro */
+}
+
+.input-forest.ng-invalid.ng-touched:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15); /* Anel vermelho ao focar */
+}
+
+.label-forest {
+    display: block;
+    font-size: 0.75rem;       /* 12px */
+    font-weight: 700;         /* Bold */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;   /* Espaçamento entre letras */
+    color: #4b5563;           /* Cinzento escuro */
+    margin-bottom: 0.5rem;    /* Espaço em baixo */
+    margin-left: 0.25rem;
+}
+
+/* INPUT (Caixa de Texto) */
+.input-forest {
+    display: block;
+    width: 100%;
+
+    /* Tamanho e Espaçamento */
+    padding: 0.625rem 1rem;   /* Cerca de 10px vertical, 16px horizontal */
+    font-size: 0.875rem;      /* 14px */
+    line-height: 1.25rem;
+
+    /* Cores e Fundo */
+    color: #1f2937;           /* Texto preto suave */
+    background-color: #ffffff;
+
+    /* Borda */
+    border: 1px solid #d1d5db; /* Cinzento médio */
+    border-radius: 0.5rem;     /* Cantos arredondados (8px) */
+
+    /* Sombra suave */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    /* Transição suave ao clicar */
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando clicas no input (Foco) */
+.input-forest:focus {
+    outline: none;
+    border-color: var(--wood-brown);     /* Cor Castanha Madeira */
+    box-shadow: 0 0 0 4px rgba(130, 91, 65, 0.15); /* Anel castanho transparente */
+}
+
+/* Placeholder */
+.input-forest::placeholder {
+    color: #9ca3af;            /* Cinzento claro */
+}
+
+/* Quando está desativado */
+.input-forest:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Se usares em Textarea, para não redimensionar feio */
+textarea.input-forest {
+    resize: vertical;
+    min-height: 80px;
+}

@@ -1,0 +1,195 @@
+// Cores extraídas do logótipo "Daddy Petfood"
+$brand-blue: #0b539a;
+$brand-yellow: #f8c134;
+$white: #ffffff;
+$light-bg: #f4f6f8;
+
+$font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+// --- Layout Principal ---
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $light-bg;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+// --- Cabeçalho ---
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $brand-blue;
+  border-bottom: 3px solid $brand-yellow;
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: block;
+    height: 5.5rem;
+    width: auto;
+    border-radius: 8px;
+  }
+
+  &__title {
+    font-family: $font-sans;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: $white;
+
+    strong {
+      color: $brand-yellow;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 2rem;
+    font-family: $font-sans;
+
+    a {
+      text-decoration: none;
+      color: $white;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+      position: relative;
+
+      &:hover {
+        color: $brand-yellow;
+      }
+
+      &.active {
+        color: $brand-yellow;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $brand-yellow;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+
+// --- Rodapé ---
+.footer {
+  background-color: $brand-blue;
+  color: rgba($white, 0.8);
+  font-family: $font-sans;
+  padding-top: 4rem;
+
+  &__container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__title {
+    font-family: $font-sans;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: $white;
+    display: block;
+    margin-bottom: 1rem;
+
+    strong {
+      color: $brand-yellow;
+    }
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    max-width: 20rem;
+    color: rgba($white, 0.8);
+  }
+
+  &__heading {
+    font-family: $font-sans;
+    color: $brand-yellow;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    a {
+      color: rgba($white, 0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $brand-yellow;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($white, 0.1);
+    padding: 1.5rem 2rem;
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: rgba($white, 0.6);
+    }
+  }
+}
+
+// --- Responsividade ---
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .header__logo  { height: 4rem; }
+  .header__title { font-size: 1.25rem; }
+
+  .header__nav {
+    gap: 1.25rem;
+    a { font-size: 0.75rem; }
+  }
+}

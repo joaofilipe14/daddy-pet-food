@@ -1,0 +1,106 @@
+<div class="about">
+
+    <section class="hero">
+        <p class="eyebrow">Sobre nós</p>
+        <h1 class="font-serif-title">A Sombra das <em>Tocas</em></h1>
+        <p class="lead">
+            Aqui conta-se a vida de três porquinhos-da-índia, o Ambrósio, o Houdini e o Viriato, e
+            partilha-se o que vamos aprendendo a cuidar deles. <strong>A Sombra das Tocas</strong> é um
+            blog de histórias e de informação boa, clara e fácil de aplicar, para quem vive com
+            porquinhos ou está a pensar vir a viver.
+        </p>
+        <p class="who">
+            Quem escreve somos nós a Laura e o João, um casal que vive em Braga e que se mudou há pouco da
+            Foz do Arelho.
+        </p>
+        <a class="cta" routerLink="/blog">Ler o blog</a>
+    </section>
+
+    <section class="mission">
+        <div class="text">
+            <span class="rule"></span>
+            <h2 class="font-serif-title">A nossa missão</h2>
+            <p>
+                Queremos ser um <strong>pilar de boa informação sobre porquinhos-da-índia</strong>.
+                Na internet encontra-se de tudo, e nem sempre está certo ou atualizado. Aqui o objetivo é
+                simples: explicar o que importa de forma honesta e acessível, para que cada porquinho
+                tenha a vida que merece.
+            </p>
+        </div>
+        <figure class="wide">
+            <div class="frame">
+                <img src="images/todos-apresentacao.jpg"
+                     alt="A Laura e o João sentados à mesa com os três porquinhos-da-índia à frente"
+                     loading="lazy" decoding="async">
+            </div>
+            <figcaption>Nós e os nossos porquinhos.</figcaption>
+        </figure>
+    </section>
+
+    <section class="pigs">
+        <h2 class="font-serif-title">Quem vive na toca</h2>
+        <p class="sub">Três porquinhos, três feitios. É deles que vêm as histórias.</p>
+
+        <ul>
+            @for (p of pigs; track p.name) {
+            <li>
+                <figure class="pig-photo">
+                    <img [src]="p.photo" [alt]="p.name">
+                </figure>
+                <h3 class="font-serif-title">{{ p.name }}</h3>
+                <p class="epithet">{{ p.epithet }}</p>
+                <p class="pig-text">{{ p.text }}</p>
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section class="blog">
+        <h2 class="font-serif-title">O que vais encontrar no blog</h2>
+        <div class="columns">
+            <div>
+                <span class="rule"></span>
+                <h3>Histórias</h3>
+                <p>
+                    O dia a dia do Ambrósio, do Houdini e do Viriato, contado com carinho e sem filtros.
+                </p>
+            </div>
+            <div>
+                <span class="rule"></span>
+                <h3>Cuidados</h3>
+                <p>
+                    Artigos educativos sobre saúde e bem-estar, como a higiene dos dentes ou o corte de pelo
+                    e unhas, escritos com cuidado e a pensar em porquinhos de todas as idades.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="soon">
+        <span class="tag">Em breve</span>
+        <h2 class="font-serif-title">Workshops de cuidados</h2>
+        <p>
+            Estamos a preparar workshops sobre como cuidar de porquinhos-da-índia, para aprender com
+            calma e tirar dúvidas. Até lá, o blog é o melhor sítio para começar.
+        </p>
+    </section>
+
+    <section class="values">
+        <h2 class="font-serif-title">O que nos guia</h2>
+        <ul>
+            @for (v of values; track v.title; let i = $index) {
+            <li>
+                <span class="num" aria-hidden="true">0{{ i + 1 }}</span>
+                <h3>{{ v.title }}</h3>
+                <p>{{ v.text }}</p>
+            </li>
+            }
+        </ul>
+    </section>
+
+    <p class="note">
+        A informação que partilhamos não substitui o médico veterinário. Se estás preocupado com a
+        saúde do teu porquinho, é ele quem o deve ver.
+    </p>
+
+</div>

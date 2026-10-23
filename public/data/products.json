@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "sku": "DPF-OMEGA",
+        "name": "Fish Oil Omega 3",
+        "description": "Óleo de peixe purificado rico em ácidos gordos essenciais. Promove um pelo brilhante, pele saudável e articulações fortes.",
+        "price": 24.99,
+        "stock": 50,
+        "imageUrl": "images/farinha.jpg",
+        "benefits": "Pele saudável, Pelo brilhante",
+        "active": true
+    },
+    {
+        "id": "2",
+        "sku": "DPF-MULTI",
+        "name": "Multivitamínico Diário",
+        "description": "Complexo vitamínico completo para garantir que o seu cão tem toda a energia e imunidade necessárias para o dia a dia.",
+        "price": 19.99,
+        "stock": 30,
+        "imageUrl": "images/omega3.jpg",
+        "benefits": "Imunidade, Energia",
+        "active": true
+    },
+    {
+        "id": "3",
+        "sku": "DPF-JOINT",
+        "name": "Protetor Articular Plus",
+        "description": "Composição avançada com condroitina e glucosamina para proteger a cartilagem e melhorar a mobilidade de cães seniores.",
+        "price": 29.99,
+        "stock": 15,
+        "imageUrl": "assets/image_ba0022.png",
+        "benefits": "Mobilidade, Articulações",
+        "active": true
+    }
+]
